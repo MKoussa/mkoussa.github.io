@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Blorp</h1>
-<p>Under Construction, lol</p>
-</body>
+	<head>
+		<title>Blorp</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+		<link rel="stylesheet" href="stylesheet.css">
+		<script>
+			function setup(){
+				createCanvas(500, 500);
+				background('#ffd8d4');
+			}
+
+			function draw(){
+				fill(255);
+				ellipse(mouseX, mouseY, 40, 10);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Blorp</h1>
+		<p>Under Construction, lol</p>
+	</body>
 </html>
