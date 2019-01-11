@@ -12,7 +12,7 @@ function draw(){
   let vc01PitchKnob = ellipse(200, 110, 50, 50);
   let vco1ShapeKnob = ellipse(300,110,50,50);
   //VCO horizontal line seperator
-  rect(75,160, 250, 10);
+  //rect(75,160, 250, 10);
   //VCO2
   let vco2VolumeKnob = ellipse(100,220,50,50);
   let vco2PitchKnob = ellipse(200,220,50,50);
