@@ -8,9 +8,14 @@ function displayLabels(){
     //Small Labels
     textSize(13);
     let vcoLabelsHeight = 70;
-    let vcoVolume = text('Volume', 79, vcoLabelsHeight);
-    let vcoPitch = text('Pitch', 184, vcoLabelsHeight);
-    let vcoShape = text('Shape', 281, vcoLabelsHeight);
+    let vcoVolumeLabel = text('Volume', 79, vcoLabelsHeight);
+    let vcoPitchLabel = text('Pitch', 184, vcoLabelsHeight);
+    let vcoShapeLabel = text('Shape', 281, vcoLabelsHeight);
+
+    let vcoAttackLabel = text('Attack', 432, vcoLabelsHeight);
+    let vcoDecayLabel = text('Decay', 532, vcoLabelsHeight);
+    let vcoSustainLabel = text('Sustain', 628, vcoLabelsHeight);
+    let vcoReleaseLabel = text('Release', 725, vcoLabelsHeight);
 
 
     //Medium Labels
@@ -24,7 +29,8 @@ function displayLabels(){
 
     //Large Labels
     textSize(35);
-    let oscMain = text('Oscillators', 120 ,45);
+    let oscMainLabel = text('Oscillators', 120 ,45);
+    let egMainLabel = text('Envelope Generator', 450, 45);
 
 
 
