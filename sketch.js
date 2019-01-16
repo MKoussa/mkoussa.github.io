@@ -110,6 +110,7 @@ function draw(){
   //
 }
 
+/*
 function mouseClicked() {
   let left = 50;
   let down = 490;
@@ -129,4 +130,10 @@ function mouseClicked() {
        osc1.stop();
        playing = false;
      }
+}
+*/
+function mouseClicked() {
+  if(mouseY > 490){
+    keyPressed(mouseX, mouseY);
+  }
 }
