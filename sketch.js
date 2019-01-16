@@ -1,6 +1,27 @@
+  var playing = false;
+  var osc1;
+  var vco1VolumeKnob;
+
 function setup(){
   createCanvas(windowWidth, windowHeight);
   background('#ffd8d4');
+
+  osc1 = new p5.Oscillator();
+  osc1.setType('sine');
+  osc1.freq(440);
+  osc1.amp(0.5, 0.05);
+  osc1.attackTime = 50;
+  //osc1.start();
+
+  osc2 = new p5.Oscillator();
+  osc2.setType('square');
+  osc2.freq(441);
+  osc2.amp(20);
+  //osc2.start();
+
+  vco1VolumeKnob = new Knob(100, 110, 50);
+  //osc3 = new Oscillator(440);
+
 }
 
 function draw(){
@@ -8,11 +29,13 @@ function draw(){
   //ellipse(left, down, width, height)
   fill(255);
   //VCO 1
-  let vco1VolumeKnob = ellipse(100, 110, 50, 50);
+  //let vco1VolumeKnob = ellipse(100, 110, 50, 50);
+  vco1VolumeKnob.display();
+
+
   let vc01PitchKnob = ellipse(200, 110, 50, 50);
   let vco1ShapeKnob = ellipse(300,110,50,50);
-  //VCO horizontal line seperator
-  //rect(75,160, 250, 10);
+
   //VCO2
   let vco2VolumeKnob = ellipse(100,220,50,50);
   let vco2PitchKnob = ellipse(200,220,50,50);
@@ -49,6 +72,7 @@ function draw(){
   //Keyboard
   //Major (White) Keys
   let c1Key = rect(50,490,40,133);
+
   let d1Key = rect(90,490,40,133);
   let e1Key = rect(130,490,40,133);
   let f1Key = rect(170,490,40,133);
@@ -79,5 +103,30 @@ function draw(){
 
 
 
+// background(color(25,130,255));
+  //keyPressed(250,490,40,133);
+
+
   //
+}
+
+function mouseClicked() {
+  let left = 50;
+  let down = 490;
+  let width = 40;
+  let height = 133;
+  if(mouseX > left &&
+     mouseX < (left + width) &&
+     mouseY > down &&
+     mouseY < (down + height)){
+       if(!playing){
+       osc1.start();
+       playing = true;
+       background(color(0,255,255));
+     }
+     }
+     else{
+       osc1.stop();
+       playing = false;
+     }
 }
