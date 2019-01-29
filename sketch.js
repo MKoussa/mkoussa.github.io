@@ -47,6 +47,14 @@ function mousePressed() {
   }
 }
 
+
+//Experimental
+function touchstart(){
+  if(touch.pageY > keyboardPositionDown){
+    keyPressed(touch.pageX, touch.pageY, keyboardPositionRight);
+  }
+}
+
 function mouseReleased(){
   //osc1.stop();
   osc2.stop();
