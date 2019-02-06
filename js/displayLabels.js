@@ -7,8 +7,9 @@ function displayLabels(){
 
     //Small Labels
     textSize(13);
-    let vcoLabelsHeight = 70;
-    let vcoVolumeLabel = text('Volume', 79, vcoLabelsHeight);
+    let vcoLabelsHeight = 120;
+    let vcoVolumeLabel = createP('Volume');
+    vcoVolumeLabel.style('position', 79, vcoLabelsHeight);
     let vcoPitchLabel = text('Pitch', 184, vcoLabelsHeight);
     let vcoShapeLabel = text('Shape', 281, vcoLabelsHeight);
 
@@ -17,7 +18,7 @@ function displayLabels(){
     let vcoSustainLabel = text('Sustain', 628, vcoLabelsHeight);
     let vcoReleaseLabel = text('Release', 725, vcoLabelsHeight);
 
-    let lfoLabelHeight = 289
+    let lfoLabelHeight = 289;
     let lfoShapeLabel = text('Shape', 133, lfoLabelHeight);
     let lfoRateLabel = text('Rate', 237, lfoLabelHeight);
     let lfoIntensityLabel = text('Intensity', 329, lfoLabelHeight);

@@ -6,9 +6,10 @@ const minorKeys5 = [554.37, 622.25, 739.99, 830.61, 932.33];
 
 const majorKeys6 = [1046.50];
 
+let majorKeyWidth = (screen.width / 15) - 2;//40;
+let majorKeyHeight = 133;
+
 keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar){
-  let majorKeyWidth = 40;
-  let majorKeyHeight = 133;
   let minorKeyWidth = majorKeyWidth / 1.6;
   let minorKeyHeight = majorKeyHeight / 2;
   let minorKeyPosition = majorKeyWidth;
@@ -75,8 +76,6 @@ keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar){
 
 drawKeyboard = function(keyboardPositionDown, keyboardPositionRightDrawlet) {
   fill(255);//Make the keys white
-  let majorKeyWidth = 40;
-  let majorKeyHeight = 133;
 
   let majorKeyIteration;
   for (majorKeyIteration = 0; majorKeyIteration < 15; majorKeyIteration++){

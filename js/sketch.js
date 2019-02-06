@@ -2,7 +2,7 @@ let osc1;
 let vco1VolumeKnob;
 let osc1Env;
 //Set Keyboard position
-let keyboardPositionRight = 70;
+let keyboardPositionRight = 10;
 let keyboardPositionDown = 490;
   
   function setup(){
@@ -37,19 +37,21 @@ let keyboardPositionDown = 490;
     osc2.amp(osc2Env);
     osc2.start();
     
-    vco1VolumeKnob = new Knob(100, 110, 50);
+    //vco1VolumeKnob = new Knob(100, 110, 50, true, true, "vco1VolumeKnob");
     //osc3 = new Oscillator(440);
     
+    displayLabels();
+    drawKnobs();
   }
   
   function draw(){
-  background('#ffd8d4');
-  cursor(CROSS); // Draw cursor as cross
-  line(mouseX, 0, mouseX, windowHeight);
-  line(0, mouseY, windowWidth, mouseY);
-  displayLabels();
-  drawKnobs();
-  drawKeyboard(keyboardPositionDown, keyboardPositionRight);
+    background('#ffd8d4');
+    cursor(CROSS); // Draw cursor as cross
+    line(mouseX, 0, mouseX, windowHeight);
+    line(0, mouseY, windowWidth, mouseY);
+    drawKeyboard(keyboardPositionDown, keyboardPositionRight);
+
+    osc1AttackLevel = vco1VolumeKnob.value() / 100;
 }
 
 function mousePressed() {
