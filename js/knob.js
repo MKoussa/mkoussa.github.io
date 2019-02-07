@@ -40,7 +40,8 @@ drawKnobs = function() {
   vco1VolumeKnob.style('position', 100, 110);
   
   
-  let vc01PitchKnob = ellipse(200, 110, 50, 50);
+  let vco1PitchKnob = ellipse(200, 110, 50, 50);
+  vco1PitchKnob.display();
   let vco1ShapeKnob = ellipse(300,110,50,50);
 
   //VCO2
