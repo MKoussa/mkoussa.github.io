@@ -16,7 +16,7 @@ let vco2ShapeSlider;
 let sliderArr = [];
 
 function buildSliders(){
-    vco1VolumeSlider = createSlider(0, 100, 25, 1);
+    vco1VolumeSlider = createSlider(1, 100, 25, 1);
     vco1VolumeSlider.position(Math.floor(browserWidth / 80), 80);
     vco1VolumeSlider.class("slider");
     sliderArr.push(vco1VolumeSlider);
@@ -51,7 +51,7 @@ function buildSliders(){
     vco1ReleaseSlider.class("slider");
     sliderArr.push(vco1ReleaseSlider);
 
-    vco2VolumeSlider = createSlider(0, 100, 0, 1);
+    vco2VolumeSlider = createSlider(1, 100, 25, 1);
     vco2VolumeSlider.position(Math.floor(browserWidth / 80), 200);
     vco2VolumeSlider.class("slider");
     sliderArr.push(vco2VolumeSlider);

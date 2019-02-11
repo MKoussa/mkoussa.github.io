@@ -38,6 +38,7 @@ keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar, keyboardP
         else if(keyPressedMajorKeyIterator > 6 && keyPressedMajorKeyIterator < 9){
           osc1.freq(minorKeys5[keyPressedMajorKeyIterator - 6] + ((minorKeys5[keyPressedMajorKeyIterator - 5] - minorKeys5[keyPressedMajorKeyIterator - 6]) * vco1PitchSliderValue));
           osc2.freq(minorKeys5[keyPressedMajorKeyIterator - 6] + ((minorKeys5[keyPressedMajorKeyIterator - 5] - minorKeys5[keyPressedMajorKeyIterator - 6]) * vco2PitchSliderValue));
+          setOscParameters();
           osc1Env.play();
           osc2Env.play();
         }
@@ -50,6 +51,7 @@ keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar, keyboardP
         else{
           osc1.freq(minorKeys4[keyPressedMajorKeyIterator + 1] + ((minorKeys4[keyPressedMajorKeyIterator] - minorKeys4[keyPressedMajorKeyIterator + 1]) * vco1PitchSliderValue));
           osc2.freq(minorKeys4[keyPressedMajorKeyIterator + 1] + ((minorKeys4[keyPressedMajorKeyIterator] - minorKeys4[keyPressedMajorKeyIterator + 1]) * vco2PitchSliderValue));
+          setOscParameters();
           osc1Env.play();
           osc2Env.play();
         }
@@ -59,18 +61,21 @@ keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar, keyboardP
       if(keyPressedMajorKeyIterator == 14) {
         osc1.freq(majorKeys6[keyPressedMajorKeyIterator - 13] + ((majorKeys6[keyPressedMajorKeyIterator - 12] - majorKeys6[keyPressedMajorKeyIterator - 13]) * vco1PitchSliderValue));
         osc2.freq(majorKeys6[keyPressedMajorKeyIterator - 13] + ((majorKeys6[keyPressedMajorKeyIterator - 12] - majorKeys6[keyPressedMajorKeyIterator - 13]) * vco2PitchSliderValue));
+        setOscParameters();
         osc1Env.play();
         osc2Env.play();
       }
       else if(keyPressedMajorKeyIterator > 6 && keyPressedMajorKeyIterator <=13){
         osc1.freq(majorKeys5[keyPressedMajorKeyIterator - 6] + ((majorKeys5[keyPressedMajorKeyIterator - 5] - majorKeys5[keyPressedMajorKeyIterator - 6]) * vco1PitchSliderValue));
         osc2.freq(majorKeys5[keyPressedMajorKeyIterator - 6] + ((majorKeys5[keyPressedMajorKeyIterator - 5] - majorKeys5[keyPressedMajorKeyIterator - 6]) * vco2PitchSliderValue));
+        setOscParameters();
         osc1Env.play();
         osc2Env.play();
       }
       else if(keyPressedMajorKeyIterator <= 6){
         osc1.freq(majorKeys4[keyPressedMajorKeyIterator + 1] + ((majorKeys4[keyPressedMajorKeyIterator + 2] - majorKeys4[keyPressedMajorKeyIterator + 1]) * vco1PitchSliderValue));
         osc2.freq(majorKeys4[keyPressedMajorKeyIterator + 1] + ((majorKeys4[keyPressedMajorKeyIterator + 2] - majorKeys4[keyPressedMajorKeyIterator + 1]) * vco2PitchSliderValue));
+        setOscParameters();
         osc1Env.play();
         osc2Env.play();
         

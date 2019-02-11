@@ -9,6 +9,12 @@ let osc1Decay;
 let osc1Sustain;
 let osc1Release;
 
+let osc2;
+let osc2Env;
+
+let osc2AttackLevel;
+let osc2ReleaseLevel = 0;
+
 setOscParameters = function(){
   osc1AttackLevel = (vco1VolumeSlider.value() / 100);
   osc1Attack =  (vco1AttackSlider.value() / 100);
@@ -20,6 +26,11 @@ setOscParameters = function(){
   osc1Env.setRange(osc1AttackLevel, osc1ReleaseLevel);
   osc1.amp(osc1Env);
   osc1.start();
+
+  osc2AttackLevel = (vco2VolumeSlider.value() / 100);
+  osc2Env.setRange(osc2AttackLevel, osc2ReleaseLevel);
+  osc2.amp(osc2Env);
+  osc2.start();
 };
 
 
@@ -38,14 +49,14 @@ buildOscillators = function(){
     osc1Env = new p5.Envelope();
 
     //osc1Env.setADSR(osc1Attack, osc1Decay, osc1Sustain, osc1Release);
-    osc1Env.setRange(osc1AttackLevel, osc1ReleaseLevel);
+    osc1Env.setRange(osc2AttackLevel, osc2ReleaseLevel);
     osc1.amp(osc1Env);
     osc1.start();
     
     osc2 = new p5.Oscillator();
     osc2.setType('square');
-    let osc2AttackLevel = 0.5;
-    let osc2ReleaseLevel = 0;
+    osc2AttackLevel = 0.5;
+    osc2ReleaseLevel = 0;
     let osc2Attack = 0.2;
     let osc2Decay = 0.2;
     let osc2Sustain = 0.2;
