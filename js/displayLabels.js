@@ -10,11 +10,30 @@ function displayLabels(){
     //Small Labels
     textSize(13);
     let vcoLabelsHeight = 120;
-    let vcoVolumeLabel = createP('Volume');
-    vcoVolumeLabel.position(100,100);
-    vcoVolumeLabel.class("smallLabels");
-    let vcoPitchLabel = text('Pitch', 184, vcoLabelsHeight);
-    let vcoShapeLabel = text('Shape', 281, vcoLabelsHeight);
+
+    let vco1VolumeLabel = createP('Volume');
+    vco1VolumeLabel.position(Math.floor(browserWidth / 80), 80);
+    vco1VolumeLabel.class("smallLabels");
+
+    let vco1PitchLabel = createP('Pitch');
+    vco1PitchLabel.position(Math.floor(browserWidth / 80) + 60, 80);
+    vco1PitchLabel.class("smallLabels");
+    
+    let vco1ShapeLabel = createP('Shape');
+    vco1ShapeLabel.position(Math.floor(browserWidth / 80) + 110, 80);
+    vco1ShapeLabel.class("smallLabels");
+
+    let vco2VolumeLabel = createP('Volume');
+    vco2VolumeLabel.position(Math.floor(browserWidth / 80),200);
+    vco2VolumeLabel.class("smallLabels");
+
+    let vco2PitchLabel = createP('Pitch');
+    vco2PitchLabel.position(Math.floor(browserWidth / 80) + 60, 200);
+    vco2PitchLabel.class("smallLabels");
+    
+    let vco2ShapeLabel = createP('Shape');
+    vco2ShapeLabel.position(Math.floor(browserWidth / 80) + 110, 200);
+    vco2ShapeLabel.class("smallLabels");
 
     let vcoAttackLabel = text('Attack', 432, vcoLabelsHeight);
     let vcoDecayLabel = text('Decay', 532, vcoLabelsHeight);

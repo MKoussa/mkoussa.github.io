@@ -1,11 +1,15 @@
 /*jshint esversion: 6 */
 
+let browserWidth = $(window).width();
+let browserHeight = $(window).height();
+
 let osc1;
 let vco1VolumeKnob;
 let osc1Env;
+
 //Set Keyboard position
 let keyboardPositionRight = 10;
-let keyboardPositionDown = 490;
+let keyboardPositionDown = browserHeight - (Math.min(((browserWidth - 10) / 15) - 2, 50) * 4);
 
 let osc1AttackLevel;
   
@@ -50,6 +54,7 @@ let osc1AttackLevel;
     buildSliders();
     //let vco1VolumeSlider = new Slider(60, 60, 0, 100, 0, 80);
     //vco1VolumeSlider.display();
+    drawSliders();
   }
   
   function draw(){
@@ -59,9 +64,6 @@ let osc1AttackLevel;
     line(0, mouseY, windowWidth, mouseY);
     drawKeyboard(keyboardPositionDown, keyboardPositionRight);
     
-    drawSliders();
-
-
     //
 }
 
