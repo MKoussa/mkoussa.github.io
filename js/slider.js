@@ -1,17 +1,23 @@
-/*jshint esversion: 6 */
-
 let sliderArr = [];
 
-drawSliders = function(){
-    fill(230);
-    let vco1VolumeSlider = createSlider(0, 127, 0, 0);
-    vco1VolumeSlider.style('rotate', 90);
-    vco1VolumeSlider.style('position', 100, 110);
+function buildSliders(){
+    let vco1VolumeSlider = createSlider(0, 100, 0);
+    vco1VolumeSlider.position(100,100);
+    vco1VolumeSlider.class("slider");
     sliderArr.push(vco1VolumeSlider);
 
-    /*
-    sliderArr.forEach(element => {
+
+}
+
+function drawSliders(){
+    knobArr.forEach(element => {
         element.display();
+
+        osc1AttackLevel = element.value() / 100;
     });
-    */
-};
+
+
+
+}
+
+

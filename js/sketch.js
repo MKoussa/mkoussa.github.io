@@ -6,20 +6,25 @@ let osc1Env;
 //Set Keyboard position
 let keyboardPositionRight = 10;
 let keyboardPositionDown = 490;
+
+let osc1AttackLevel;
   
   function setup(){
-    createCanvas(windowWidth, windowHeight);
+    createCanvas($(window).width() - 20, $(window).height() - 20);
     background('#ffd8d4');
     
     osc1 = new p5.Oscillator();
     osc1.setType('sine');
-    let osc1AttackLevel = 0.5;
+
+    //osc1AttackLevel = 0.95;
+
     let osc1ReleaseLevel = 0;
     let osc1Attack = 0.2;
     let osc1Decay = 0.2;
     let osc1Sustain = 0.2;
     let osc1Release = 0.2;
     osc1Env = new p5.Envelope();
+
     osc1Env.setADSR(osc1Attack, osc1Decay, osc1Sustain, osc1Release);
     osc1Env.setRange(osc1AttackLevel, osc1ReleaseLevel);
     osc1.amp(osc1Env);
@@ -39,12 +44,12 @@ let keyboardPositionDown = 490;
     osc2.amp(osc2Env);
     osc2.start();
     
-    //vco1VolumeKnob = new Knob(100, 110, 50, true, true, "vco1VolumeKnob");
-    //osc3 = new Oscillator(440);
     
     displayLabels();
     //drawKnobs();
-    drawSliders();
+    buildSliders();
+    //let vco1VolumeSlider = new Slider(60, 60, 0, 100, 0, 80);
+    //vco1VolumeSlider.display();
   }
   
   function draw(){
@@ -53,8 +58,11 @@ let keyboardPositionDown = 490;
     line(mouseX, 0, mouseX, windowHeight);
     line(0, mouseY, windowWidth, mouseY);
     drawKeyboard(keyboardPositionDown, keyboardPositionRight);
+    
+    drawSliders();
 
-    //osc1AttackLevel = vco1VolumeKnob.value() / 100;
+
+    //
 }
 
 function mousePressed() {
@@ -62,7 +70,7 @@ function mousePressed() {
     getAudioContext().resume();
   }
   if(mouseY > keyboardPositionDown){
-    keyPressed(mouseX, mouseY, keyboardPositionRight);
+    keyPressed(mouseX, mouseY, keyboardPositionRight, keyboardPositionDown);
   }
 }
 

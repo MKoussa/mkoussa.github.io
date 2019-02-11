@@ -8,10 +8,12 @@ const minorKeys5 = [554.37, 622.25, 739.99, 830.61, 932.33];
 
 const majorKeys6 = [1046.50];
 
-let majorKeyWidth = (screen.width / 15) - 2;//40;
-let majorKeyHeight = 133;
+//
+let majorKeyWidth = (($(window).width() - 10) / 15) - 2;//40;
+let majorKeyHeight = majorKeyWidth * 3;
+//
 
-keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar){
+keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar, keyboardPositionDown){
   let minorKeyWidth = majorKeyWidth / 1.6;
   let minorKeyHeight = majorKeyHeight / 2;
   let minorKeyPosition = majorKeyWidth;
@@ -19,7 +21,10 @@ keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar){
   let minorKeysToSkip = [2,6,9,13];
 
   for(keyPressedMajorKeyIterator = 0; keyPressedMajorKeyIterator < 15; keyPressedMajorKeyIterator++){
-    if(mouseX > minorKeyPosition * keyPressedMajorKeyIterator + minorKeyPositionRight && mouseX < (minorKeyPosition * keyPressedMajorKeyIterator + minorKeyPositionRight) + minorKeyWidth * 2 && mouseY < 623 - minorKeyHeight && !minorKeysToSkip.includes(keyPressedMajorKeyIterator)){
+    if(mouseX > minorKeyPosition * keyPressedMajorKeyIterator + minorKeyPositionRight
+      && mouseX < (minorKeyPosition * keyPressedMajorKeyIterator + minorKeyPositionRight) + minorKeyWidth * 2
+      && mouseY < keyboardPositionDown + minorKeyHeight 
+      && !minorKeysToSkip.includes(keyPressedMajorKeyIterator)){
         if(keyPressedMajorKeyIterator > 9){
           osc1.freq(minorKeys5[keyPressedMajorKeyIterator - 8]);
           osc2.freq(minorKeys5[keyPressedMajorKeyIterator - 8]);
@@ -45,7 +50,9 @@ keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar){
           osc2Env.play();
         }
       }
-    else if(mouseX > (majorKeyWidth * keyPressedMajorKeyIterator + keyboardPositionRightPressedVar) && mouseX < majorKeyWidth * (keyPressedMajorKeyIterator + 1) + keyboardPositionRightPressedVar && mouseY < 623)
+    else if(mouseX > (majorKeyWidth * keyPressedMajorKeyIterator + keyboardPositionRightPressedVar) 
+    && mouseX < majorKeyWidth * (keyPressedMajorKeyIterator + 1) + keyboardPositionRightPressedVar 
+    && mouseY < majorKeyHeight + keyboardPositionDown)
     {
       if(keyPressedMajorKeyIterator == 14) {
         osc1.freq(majorKeys6[keyPressedMajorKeyIterator - 14]);

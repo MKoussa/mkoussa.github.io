@@ -11,7 +11,8 @@ function displayLabels(){
     textSize(13);
     let vcoLabelsHeight = 120;
     let vcoVolumeLabel = createP('Volume');
-    vcoVolumeLabel.style('position', 79, vcoLabelsHeight);
+    vcoVolumeLabel.position(100,100);
+    vcoVolumeLabel.class("smallLabels");
     let vcoPitchLabel = text('Pitch', 184, vcoLabelsHeight);
     let vcoShapeLabel = text('Shape', 281, vcoLabelsHeight);
 
