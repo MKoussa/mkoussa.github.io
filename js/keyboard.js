@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const majorKeys4 = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88];
 const minorKeys4 = [277.18, 311.13, 369.99, 415.30, 466.16];
 
@@ -17,10 +19,7 @@ keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar){
   let minorKeysToSkip = [2,6,9,13];
 
   for(keyPressedMajorKeyIterator = 0; keyPressedMajorKeyIterator < 15; keyPressedMajorKeyIterator++){
-    if(mouseX > minorKeyPosition * keyPressedMajorKeyIterator + minorKeyPositionRight
-      && mouseX < (minorKeyPosition * keyPressedMajorKeyIterator + minorKeyPositionRight) + minorKeyWidth * 2
-      && mouseY < 623 - minorKeyHeight 
-      && !minorKeysToSkip.includes(keyPressedMajorKeyIterator)){
+    if(mouseX > minorKeyPosition * keyPressedMajorKeyIterator + minorKeyPositionRight && mouseX < (minorKeyPosition * keyPressedMajorKeyIterator + minorKeyPositionRight) + minorKeyWidth * 2 && mouseY < 623 - minorKeyHeight && !minorKeysToSkip.includes(keyPressedMajorKeyIterator)){
         if(keyPressedMajorKeyIterator > 9){
           osc1.freq(minorKeys5[keyPressedMajorKeyIterator - 8]);
           osc2.freq(minorKeys5[keyPressedMajorKeyIterator - 8]);
@@ -46,9 +45,7 @@ keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar){
           osc2Env.play();
         }
       }
-    else if(mouseX > (majorKeyWidth * keyPressedMajorKeyIterator + keyboardPositionRightPressedVar) 
-    && mouseX < majorKeyWidth * (keyPressedMajorKeyIterator + 1) + keyboardPositionRightPressedVar 
-    && mouseY < 623)
+    else if(mouseX > (majorKeyWidth * keyPressedMajorKeyIterator + keyboardPositionRightPressedVar) && mouseX < majorKeyWidth * (keyPressedMajorKeyIterator + 1) + keyboardPositionRightPressedVar && mouseY < 623)
     {
       if(keyPressedMajorKeyIterator == 14) {
         osc1.freq(majorKeys6[keyPressedMajorKeyIterator - 14]);

@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 function displayLabels(){
     //textSize() runs against all calls after it is used
     //Thus, all labels must be sized accordingly

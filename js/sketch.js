@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 let osc1;
 let vco1VolumeKnob;
 let osc1Env;
@@ -41,7 +43,8 @@ let keyboardPositionDown = 490;
     //osc3 = new Oscillator(440);
     
     displayLabels();
-    drawKnobs();
+    //drawKnobs();
+    drawSliders();
   }
   
   function draw(){
@@ -51,7 +54,7 @@ let keyboardPositionDown = 490;
     line(0, mouseY, windowWidth, mouseY);
     drawKeyboard(keyboardPositionDown, keyboardPositionRight);
 
-    osc1AttackLevel = vco1VolumeKnob.value() / 100;
+    //osc1AttackLevel = vco1VolumeKnob.value() / 100;
 }
 
 function mousePressed() {

@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 let knobArr = [];
 
 function Knob(x, y, r, dragging, rollover, name){
@@ -32,12 +34,12 @@ drawKnobs = function() {
   //ellipse(left, down, width, height)
   fill(255);
   //VCO 1
-  //let vco1VolumeKnob = new Knob(100, 110, 50, true, true, "vco1VolumeKnob");
+  //let vco1VolumeSlider = new Knob(100, 110, 50, true, true, "vco1VolumeKnob");
   //vco1VolumeKnob.mousePressed(changeColor());
   
   let vco1VolumeKnob = createSlider(0, 127, 0, 0);
-  vco1VolumeKnob.style('rotate', 90);
-  vco1VolumeKnob.style('position', 100, 110);
+  ////vco1VolumeSlider.style('rotate', 90);
+  //vco1VolumeSlider.style('position', 100, 110);
   
   
   let vc01PitchKnob = ellipse(200, 110, 50, 50);
