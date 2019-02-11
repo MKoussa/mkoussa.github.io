@@ -20,7 +20,7 @@ function displayLabels(){
     vco1PitchLabel.class("smallLabels");
     
     let vco1ShapeLabel = createP('Shape');
-    vco1ShapeLabel.position(Math.floor(browserWidth / 80) + 110, 80);
+    vco1ShapeLabel.position(Math.floor(browserWidth / 80) + 105, 80);
     vco1ShapeLabel.class("smallLabels");
 
     let vco2VolumeLabel = createP('Volume');
@@ -32,13 +32,31 @@ function displayLabels(){
     vco2PitchLabel.class("smallLabels");
     
     let vco2ShapeLabel = createP('Shape');
-    vco2ShapeLabel.position(Math.floor(browserWidth / 80) + 110, 200);
+    vco2ShapeLabel.position(Math.floor(browserWidth / 80) + 105, 200);
     vco2ShapeLabel.class("smallLabels");
 
     let vcoAttackLabel = text('Attack', 432, vcoLabelsHeight);
     let vcoDecayLabel = text('Decay', 532, vcoLabelsHeight);
     let vcoSustainLabel = text('Sustain', 628, vcoLabelsHeight);
     let vcoReleaseLabel = text('Release', 725, vcoLabelsHeight);
+
+    let vco1AttackLabel = createP('Attack');
+    vco1AttackLabel.position(Math.floor(browserWidth / 80) + 205, 80);
+    vco1AttackLabel.class("smallLabels");
+
+    let vco1DecayLabel = createP('Decay');
+    vco1DecayLabel.position(Math.floor(browserWidth / 80) + 255, 80);
+    vco1DecayLabel.class("smallLabels");
+
+    let vco1SustainLabel = createP('Sustain');
+    vco1SustainLabel.position(Math.floor(browserWidth / 80) + 303, 80);
+    vco1SustainLabel.class("smallLabels");
+
+    let vco1ReleaseLabel = createP('Release');
+    vco1ReleaseLabel.position(Math.floor(browserWidth / 80) + 350, 80);
+    vco1ReleaseLabel.class("smallLabels");
+
+    /*
 
     let lfoLabelHeight = 289;
     let lfoShapeLabel = text('Shape', 133, lfoLabelHeight);
@@ -85,7 +103,7 @@ function displayLabels(){
     rotate(PI/2);
     text('Blorp', 300, -730);
     rotate(-PI/2);
-
+    */
 
 
 }
