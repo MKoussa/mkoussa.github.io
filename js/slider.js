@@ -13,6 +13,11 @@ let vco2VolumeSlider;
 let vco2PitchSlider;
 let vco2ShapeSlider;
 
+let vco2AttackSlider;
+let vco2DecaySlider;
+let vco2SustainSlider;
+let vco2ReleaseSlider;
+
 let sliderArr = [];
 
 function buildSliders(){
@@ -36,17 +41,17 @@ function buildSliders(){
     vco1AttackSlider.class("slider");
     sliderArr.push(vco1AttackSlider);
 
-    vco1DecaySlider = createSlider(0, 100, 20, 1);
+    vco1DecaySlider = createSlider(1, 100, 20, 1);
     vco1DecaySlider.position(Math.floor(browserWidth / 80) + 250, 80);
     vco1DecaySlider.class("slider");
     sliderArr.push(vco1DecaySlider);
 
-    vco1SustainSlider = createSlider(0, 100, 20, 1);
+    vco1SustainSlider = createSlider(1, 100, 20, 1);
     vco1SustainSlider.position(Math.floor(browserWidth / 80) + 300, 80);
     vco1SustainSlider.class("slider");
     sliderArr.push(vco1SustainSlider);
 
-    vco1ReleaseSlider = createSlider(0, 100, 20, 1);
+    vco1ReleaseSlider = createSlider(1, 100, 20, 1);
     vco1ReleaseSlider.position(Math.floor(browserWidth / 80) + 350, 80);
     vco1ReleaseSlider.class("slider");
     sliderArr.push(vco1ReleaseSlider);
@@ -65,6 +70,26 @@ function buildSliders(){
     vco2ShapeSlider.position(Math.floor(browserWidth / 80) + 100, 200);
     vco2ShapeSlider.class("slider");
     sliderArr.push(vco2PitchSlider);
+
+    vco2AttackSlider = createSlider(1, 100, 20, 1);
+    vco2AttackSlider.position(Math.floor(browserWidth / 80) + 200, 200);
+    vco2AttackSlider.class("slider");
+    sliderArr.push(vco2AttackSlider);
+
+    vco2DecaySlider = createSlider(1, 100, 20, 1);
+    vco2DecaySlider.position(Math.floor(browserWidth / 80) + 250, 200);
+    vco2DecaySlider.class("slider");
+    sliderArr.push(vco2DecaySlider);
+
+    vco2SustainSlider = createSlider(1, 100, 20, 1);
+    vco2SustainSlider.position(Math.floor(browserWidth / 80) + 300, 200);
+    vco2SustainSlider.class("slider");
+    sliderArr.push(vco2SustainSlider);
+
+    vco2ReleaseSlider = createSlider(1, 100, 20, 1);
+    vco2ReleaseSlider.position(Math.floor(browserWidth / 80) + 350, 200);
+    vco2ReleaseSlider.class("slider");
+    sliderArr.push(vco2ReleaseSlider);
 }
 
 
