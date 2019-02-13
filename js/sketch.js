@@ -23,10 +23,8 @@ let keyboardPositionDown;
   }
   
   function draw(){
-    background('#ffd8d4');
+    background('#23543c');
     cursor(CROSS); // Draw cursor as cross
-    line(mouseX, 0, mouseX, windowHeight);
-    line(0, mouseY, windowWidth, mouseY);
     drawKeyboard(keyboardPositionDown, keyboardPositionRight);
 }
 

@@ -12,11 +12,12 @@ html, body { padding: 1; margin: 0; }
     -webkit-appearance: none;
     width: 100px;
     height: 25px;
-    background: #d3d3d3;
+    background: #c58662;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
     transform: rotate(-75deg);
+    cursor: crosshair;
   }
   
 
@@ -26,18 +27,69 @@ html, body { padding: 1; margin: 0; }
     appearance: none;
     width: 25px;
     height: 25px;
-    background: rgb(234, 235, 234);
-    cursor: pointer;
+    background: #c6cac1;
+    cursor: crosshair;
   }
   
 .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: rgb(199, 80, 173);
-    cursor: pointer;
+    width: 10px;
+    height: 24px;
+    background: #c6cac1;
+    cursor: crosshair;
   }
 
-.smallLabels{
+  .medSlider:hover {
+    opacity: 1;
+  }
+
+.medSlider {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 25px;
+  background: #698d70;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  transform: rotate(-100deg);
+  cursor: crosshair;
+}
+  
+.medSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #c6cac1;
+  cursor: crosshair;
+}
+  
+.medSlider::-moz-range-thumb {
+  width: 10px;
+  height: 24px;
+  background: #c6cac1;
+  cursor: crosshair;
+}
+
+.smallLeftLabels{
     -webkit-transform: rotate(-75deg);
-    color: red;
+    color: #c6cac1;
 } 
+
+.smallLeftLabels:hover{
+  background-color: #014d3b;
+  cursor: none;
+} 
+
+.smallRightLabels{
+  -webkit-transform: rotate(80deg);
+  color: #c58662;
+} 
+
+.smallRightLabels:hover{
+  background-color: #014d3b;
+  cursor: none;
+} 
+
+.keyboard:hover {
+  background-color: aqua;
+}

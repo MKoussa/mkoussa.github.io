@@ -89,7 +89,16 @@ drawKeyboard = function(keyboardPositionDown, keyboardPositionRightDrawlet) {
 
   let majorKeyIteration;
   for (majorKeyIteration = 0; majorKeyIteration < 15; majorKeyIteration++){
-    rect((majorKeyWidth * majorKeyIteration) + keyboardPositionRightDrawlet, keyboardPositionDown, majorKeyWidth, majorKeyHeight);
+    if(majorKeyIteration == 0){
+      rect((majorKeyWidth * majorKeyIteration) + keyboardPositionRightDrawlet, keyboardPositionDown, majorKeyWidth, majorKeyHeight,  10, 0, 7, 18);
+    } 
+    else if(majorKeyIteration == 14){
+      rect((majorKeyWidth * majorKeyIteration) + keyboardPositionRightDrawlet, keyboardPositionDown, majorKeyWidth, majorKeyHeight,  0, 10, 7, 18);
+    }
+    else{
+      rect((majorKeyWidth * majorKeyIteration) + keyboardPositionRightDrawlet, keyboardPositionDown, majorKeyWidth, majorKeyHeight,  0, 0, 7, 18);
+    }
+      
   }
 
   fill(20);//Make the keys black
@@ -102,7 +111,7 @@ drawKeyboard = function(keyboardPositionDown, keyboardPositionRightDrawlet) {
   let minorKeyIteration;
   for (minorKeyIteration = 0; minorKeyIteration < 14; minorKeyIteration++){
     if(!minorKeysToSkip.includes(minorKeyIteration)){
-        rect(minorKeyPosition * minorKeyIteration + minorKeyPositionRight, keyboardPositionDown, minorKeyWidth, minorKeyHeight);
+        rect(minorKeyPosition * minorKeyIteration + minorKeyPositionRight, keyboardPositionDown, minorKeyWidth, minorKeyHeight,  0, 0, 18, 7);
       }
   }
 };

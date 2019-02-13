@@ -18,6 +18,10 @@ let vco2DecaySlider;
 let vco2SustainSlider;
 let vco2ReleaseSlider;
 
+//Filter
+let filterEGAmountSlider;
+let filterEGResonanceSlider;
+
 let sliderArr = [];
 
 function buildSliders(){
@@ -90,6 +94,17 @@ function buildSliders(){
     vco2ReleaseSlider.position(Math.floor(browserWidth / 80) + 350, 200);
     vco2ReleaseSlider.class("slider");
     sliderArr.push(vco2ReleaseSlider);
+
+    //filter
+    filterEGAmountSlider = createSlider(1, 100, 20, 1);
+    filterEGAmountSlider.position(Math.floor(browserWidth / 80, 200), 350);
+    filterEGAmountSlider.class("medSlider");
+    sliderArr.push(filterEGAmountSlider);
+
+    filterEGResonanceSlider = createSlider(1, 100, 20, 1);
+    filterEGResonanceSlider.position(Math.floor(browserWidth / 80, 200) + 50, 350);
+    filterEGResonanceSlider.class("medSlider");
+    sliderArr.push(filterEGResonanceSlider);
 }
 
 
