@@ -4,9 +4,6 @@ function displayLabels(){
     //textSize() runs against all calls after it is used
     //Thus, all labels must be sized accordingly
 
-    fill('#acafdd');
-    textFont('sans-serif');
-
     //Small Labels
     textSize(13);
     let vcoLabelsHeight = 120;

@@ -1,4 +1,9 @@
 /*jshint esversion: 6 */
+let envArr = [];
+let oscArr = [];
+let envelopeCounter = 0;
+let oscillatorCounter = 0;
+
 let osc1;
 let osc1Env;
 let osc1WaveShape;
@@ -21,6 +26,38 @@ let osc2Decay;
 let osc2Sustain;
 let osc2Release;
 
+getEnvelope = function(){
+  if(envArr === undefined || envArr.length == 0){
+    let tempEnv;
+    for(let buildEnvArrIter = 0; buildEnvArrIter < 100; buildEnvArrIter++){     
+      tempEnv = new p5.Envelope();
+      envArr.push(tempEnv);
+    }
+  }
+  if(envelopeCounter > 100) {
+    envelopeCounter = 0;
+    return envArr[envelopeCounter];
+  }
+  envelopeCounter++;
+  return envArr[envelopeCounter];
+};
+
+getOscillator = function(){
+  if(oscArr === undefined || oscArr.length == 0){
+    let tempOsc;
+    for(let buildOscArrIter = 0; buildOscArrIter < 100; buildOscArrIter++){     
+      tempOsc = new p5.Oscillator();
+      oscArr.push(tempOsc);
+    }
+  }
+  if(oscillatorCounter > 100) {
+    oscillatorCounter = 0;
+    return oscArr[oscillatorCounter];
+  }
+  oscillatorCounter++;
+  return oscArr[oscillatorCounter];
+};
+
 setOscParameters = function(){
   osc1AttackLevel = (vco1VolumeSlider.value() / 100);
   osc1Attack =  (vco1AttackSlider.value() / 100);
@@ -42,9 +79,12 @@ setOscParameters = function(){
       osc1WaveShape = 'square';
       break;
   }
-            
+        
+  osc1Env = getEnvelope();
   osc1Env.setADSR(osc1Attack, osc1Decay, osc1Sustain, osc1Release);
   osc1Env.setRange(osc1AttackLevel, osc1ReleaseLevel);
+
+  osc1 = getOscillator();
   osc1.setType(osc1WaveShape);
   osc1.amp(osc1Env);
   osc1.start();
@@ -70,8 +110,10 @@ setOscParameters = function(){
       break;
   }
 
+  osc2Env = getEnvelope();
   osc2Env.setADSR(osc2Attack, osc2Decay, osc2Sustain, osc2Release);
   osc2Env.setRange(osc2AttackLevel, osc2ReleaseLevel);
+
   osc2.setType(osc2WaveShape);
   osc2.amp(osc2Env);
   osc2.start();
@@ -79,7 +121,6 @@ setOscParameters = function(){
 
 
 buildOscillators = function(){
-  
     osc1 = new p5.Oscillator();
     osc1.setType('sine');
 
@@ -91,7 +132,7 @@ buildOscillators = function(){
     osc1Sustain = (vco1SustainSlider.value() / 100);
     osc1Release = (vco1ReleaseSlider.value() / 100);
     osc1Env = new p5.Envelope();
-
+    
     //osc1Env.setADSR(osc1Attack, osc1Decay, osc1Sustain, osc1Release);
     osc1Env.setRange(osc2AttackLevel, osc2ReleaseLevel);
     osc1.amp(osc1Env);
@@ -110,5 +151,6 @@ buildOscillators = function(){
     osc2Env.setRange(osc1AttackLevel, osc1ReleaseLevel);
     osc2.amp(osc2Env);
     osc2.start();
-
-};
+  };
+  
+ 
