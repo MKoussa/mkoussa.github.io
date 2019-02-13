@@ -42,15 +42,16 @@ getEnvelope = function(){
   return envArr[envelopeCounter];
 };
 
+
 getOscillator = function(){
   if(oscArr === undefined || oscArr.length == 0){
     let tempOsc;
-    for(let buildOscArrIter = 0; buildOscArrIter < 100; buildOscArrIter++){     
+    for(let buildOscArrIter = 0; buildOscArrIter < 20; buildOscArrIter++){     
       tempOsc = new p5.Oscillator();
       oscArr.push(tempOsc);
     }
   }
-  if(oscillatorCounter > 100) {
+  if(oscillatorCounter > 20) {
     oscillatorCounter = 0;
     return oscArr[oscillatorCounter];
   }
@@ -58,7 +59,14 @@ getOscillator = function(){
   return oscArr[oscillatorCounter];
 };
 
+
 setOscParameters = function(){
+  osc1 = getOscillator();
+  osc2 = getOscillator();
+
+  osc1Env = getEnvelope();
+  osc2Env = getEnvelope();
+
   osc1AttackLevel = (vco1VolumeSlider.value() / 100);
   osc1Attack =  (vco1AttackSlider.value() / 100);
   osc1Decay = (vco1DecaySlider.value() / 100);
@@ -80,11 +88,9 @@ setOscParameters = function(){
       break;
   }
         
-  osc1Env = getEnvelope();
   osc1Env.setADSR(osc1Attack, osc1Decay, osc1Sustain, osc1Release);
   osc1Env.setRange(osc1AttackLevel, osc1ReleaseLevel);
 
-  osc1 = getOscillator();
   osc1.setType(osc1WaveShape);
   osc1.amp(osc1Env);
   osc1.start();
@@ -110,7 +116,6 @@ setOscParameters = function(){
       break;
   }
 
-  osc2Env = getEnvelope();
   osc2Env.setADSR(osc2Attack, osc2Decay, osc2Sustain, osc2Release);
   osc2Env.setRange(osc2AttackLevel, osc2ReleaseLevel);
 
@@ -125,8 +130,6 @@ buildOscillators = function(){
     osc1.setType('sine');
 
     osc1AttackLevel = (vco1VolumeSlider.value() / 100);
-
-    let osc1ReleaseLevel = 0;
     osc1Attack =  (vco1AttackSlider.value() / 100);
     osc1Decay = (vco1DecaySlider.value() / 100);
     osc1Sustain = (vco1SustainSlider.value() / 100);
@@ -134,21 +137,20 @@ buildOscillators = function(){
     osc1Env = new p5.Envelope();
     
     //osc1Env.setADSR(osc1Attack, osc1Decay, osc1Sustain, osc1Release);
-    osc1Env.setRange(osc2AttackLevel, osc2ReleaseLevel);
+    osc1Env.setRange(osc1AttackLevel, osc1ReleaseLevel);
     osc1.amp(osc1Env);
     osc1.start();
     
     osc2 = new p5.Oscillator();
-    osc2.setType('square');
-    osc2AttackLevel = 0.5;
-    osc2ReleaseLevel = 0;
-    let osc2Attack = 0.2;
-    let osc2Decay = 0.2;
-    let osc2Sustain = 0.2;
-    let osc2Release = 0.2;
+    osc2.setType('sine');
+    osc2AttackLevel = (vco2VolumeSlider.value() / 100);
+    osc2Attack =  (vco2AttackSlider.value() / 100);
+    osc2Decay = (vco2DecaySlider.value() / 100);
+    osc2Sustain = (vco2SustainSlider.value() / 100);
+    osc2Release = (vco2ReleaseSlider.value() / 100);
     osc2Env = new p5.Envelope();
-    osc2Env.setADSR(osc1Attack, osc1Decay, osc1Sustain, osc1Release);
-    osc2Env.setRange(osc1AttackLevel, osc1ReleaseLevel);
+    osc2Env.setADSR(osc2Attack, osc2Decay, osc2Sustain, osc2Release);
+    osc2Env.setRange(osc2AttackLevel, osc2ReleaseLevel);
     osc2.amp(osc2Env);
     osc2.start();
   };
