@@ -15,7 +15,7 @@ let keyboardPositionDown;
     keyboardPositionDown = browserHeight - (Math.min(((browserWidth - 10) / 15) - 2, 50) * 4);
 
     createCanvas($(window).width() - 20, $(window).height() - 20);
-    background('#ffd8d4');
+    background('#23543c');
     displayLabels();
     buildSliders();
     buildOscillators();

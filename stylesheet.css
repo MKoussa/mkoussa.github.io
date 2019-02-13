@@ -1,4 +1,8 @@
-html, body { padding: 1; margin: 0; }
+html, body { 
+  padding: 1; 
+  margin: 0; 
+  background-color: #23543c;
+}
 
 .slider:hover {
     opacity: 1;
