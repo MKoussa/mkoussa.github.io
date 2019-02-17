@@ -11,6 +11,8 @@ let keyboardPositionDown;
     browserWidth = $(window).width();
     browserHeight = $(window).height();
 
+    frameRate(1);
+
     keyboardPositionRight = 10;
     keyboardPositionDown = browserHeight - (Math.min(((browserWidth - 10) / 15) - 2, 50) * 4);
 
@@ -32,7 +34,7 @@ function mousePressed() {
   if (getAudioContext().state !== 'running') {
     getAudioContext().resume();
   }
-  if(mouseY > keyboardPositionDown){
+  if(mouseY > keyboardPositionDown && mouseY < keyboardPositionDown + majorKeyHeight && mouseX > keyboardPositionRight && mouseX < keyboardPositionRight + (majorKeyWidth * 15)){
     keyPressed(mouseX, mouseY, keyboardPositionRight, keyboardPositionDown);
   }
 }

@@ -59,8 +59,8 @@ keyPressed = function(mouseX, mouseY, keyboardPositionRightPressedVar, keyboardP
       }
     }
 }             
-  osc1Env.play();
-  osc2Env.play();    
+  osc1Env.play(osc1);
+  osc2Env.play(osc2);    
 };
 
 drawKeyboard = function(keyboardPositionDown, keyboardPositionRightDrawlet) {

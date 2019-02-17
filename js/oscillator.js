@@ -26,37 +26,46 @@ let osc2Decay;
 let osc2Sustain;
 let osc2Release;
 
+let maxOsc = 60;
+let maxEnv = 60;
+
 getEnvelope = function(){
+  let tempEnv;
   if(envArr === undefined || envArr.length == 0){
-    let tempEnv;
-    for(let buildEnvArrIter = 0; buildEnvArrIter < 100; buildEnvArrIter++){     
+    for(let buildEnvArrIter = 0; buildEnvArrIter < maxEnv; buildEnvArrIter++){     
       tempEnv = new p5.Envelope();
       envArr.push(tempEnv);
     }
   }
-  if(envelopeCounter > 100) {
+  if(envelopeCounter > maxEnv) {
     envelopeCounter = 0;
-    return envArr[envelopeCounter];
+    tempEnv = envArr[envelopeCounter];
+    return tempEnv;
   }
   envelopeCounter++;
-  return envArr[envelopeCounter];
+  tempEnv = envArr[envelopeCounter];
+  return tempEnv;
 };
 
 
 getOscillator = function(){
+  let tempOsc;
   if(oscArr === undefined || oscArr.length == 0){
-    let tempOsc;
-    for(let buildOscArrIter = 0; buildOscArrIter < 20; buildOscArrIter++){     
+    for(let buildOscArrIter = 0; buildOscArrIter < maxOsc; buildOscArrIter++){     
       tempOsc = new p5.Oscillator();
       oscArr.push(tempOsc);
     }
   }
-  if(oscillatorCounter > 20) {
+  if(oscillatorCounter > maxOsc) {
     oscillatorCounter = 0;
-    return oscArr[oscillatorCounter];
+    tempOsc = oscArr[oscillatorCounter];
+    tempOsc.stop();
+    return tempOsc;
   }
   oscillatorCounter++;
-  return oscArr[oscillatorCounter];
+  tempOsc = oscArr[oscillatorCounter];
+  tempOsc.stop();
+  return tempOsc;
 };
 
 
