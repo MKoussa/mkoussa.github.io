@@ -1,0 +1,74 @@
+html, body{
+    height: 90%;
+    font-family: Helvetica, sans-serif;
+    background-color: black;
+}
+.header{
+    mix-blend-mode: difference; 
+    color: gold;
+    font-size: 400%;
+    margin: 0;
+    white-space: nowrap;
+}
+.grid-container{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.nav{
+    mix-blend-mode: difference; 
+    overflow: visible;
+    color: black;
+    background-color: gold;
+    animation-name: backColorReverse;
+    animation-duration: 4s;
+}
+.navButton{
+    transition: 1s;
+    display: block;
+    padding: 20px 0px;
+    width: 100px;
+    text-align: center;
+    font-size: 200%;
+    color:black;
+    rotate: -45deg;
+    text-decoration-line: none;
+}
+.navButton:link{
+    color:black;
+}
+.navButton:visited{
+    color:black;
+    text-decoration-line: none;
+}
+.navButton:hover{
+    background-color: black;
+    color:gold;
+    rotate: 0deg;
+}
+.mainBody{
+    mix-blend-mode: difference; 
+    text-align: center;
+    background-color: black;
+    color: gold;
+    position: relative;         
+    width: 100%;
+    animation-name: backColor;
+    animation-duration: 4s;
+}
+@keyframes backColor{
+    0%   { color: black;}
+    100% { color: gold;}
+}
+@keyframes backColorReverse{
+    0%   {background-color: black; transform: translateY(-100%);}
+    100% {background-color: gold; transform: translateY(0); }               
+}
+@keyframes marquee{
+    0% {    transform: translateX(0);  }
+    100% {     transform: translateX(-100%);  }
+}
+@keyframes marqueeVert{
+    0% {    transform: translateY(100%);  }
+    100% {     transform: translateY(0);  }
+}

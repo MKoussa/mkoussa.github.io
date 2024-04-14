@@ -7,7 +7,11 @@ let browserHeight = $(window).height();
 let keyboardPositionRight;
 let keyboardPositionDown;
   
-  function setup(){
+function setup(){
+    
+  var canvas = createCanvas(100, 100);
+  canvas.parent('blorp');
+      /*
     browserWidth = $(window).width();
     browserHeight = $(window).height();
 
@@ -16,15 +20,17 @@ let keyboardPositionDown;
     keyboardPositionRight = 10;
     keyboardPositionDown = browserHeight - (Math.min(((browserWidth - 10) / 15) - 2, 50) * 4);
 
-    createCanvas($(window).width() - 20, $(window).height() - 20);
-    background('#23543c');
-    displayLabels();
-    buildSliders();
-    buildOscillators();
+    var blorpCanvas = createCanvas($(window).width() - 20, $(window).height() - 20);
+    blorpCanvas.parent('blorp');
 
-  }
+    blorpCanvas.background('#23543c');
+    blorpCanvas.displayLabels();
+    blorpCanvas.buildSliders();
+    blorpCanvas.buildOscillators();
+*/
+}
   
-  function draw(){
+function draw(){
     background('#23543c');
     cursor(CROSS); // Draw cursor as cross
     drawKeyboard(keyboardPositionDown, keyboardPositionRight);
