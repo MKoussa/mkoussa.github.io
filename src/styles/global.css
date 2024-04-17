@@ -1,4 +1,4 @@
-html, body{
+html, body {
     height: 100%;
     width: 100%;
     font-family: Helvetica, sans-serif;
@@ -7,10 +7,14 @@ html, body{
 .header-container {
     mix-blend-mode: difference;
     overflow: hidden;
+    animation-name: backColorTransition;
+    animation-duration: 8s;
 }
 .header-container-side {
     mix-blend-mode: difference;
     overflow: hidden;
+    animation-name: backColorTransition;
+    animation-duration: 8s;
 }
 .header-scroll {
     mix-blend-mode: difference;
@@ -29,6 +33,7 @@ html, body{
 }
 
 .nav {
+    border-radius: 5px;
     grid-column: 2;
     grid-row: 2;
     mix-blend-mode: difference;
@@ -39,7 +44,7 @@ html, body{
     animation-duration: 4s;
 }
 .navButton{
-    transition: 1s;
+    transition: 0.8s;
     display: block;
     padding: 20px 0px;
     width: 100px;
@@ -58,7 +63,7 @@ html, body{
 }
 .navButton:hover{
     background-color: black;
-    color:gold;
+    color: gold;
     rotate: 0deg;
 }
 .mainBody {
@@ -72,13 +77,26 @@ html, body{
     animation-name: backColor;
     animation-duration: 4s;
 }
-@keyframes backColor{
+.download-table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    table-layout: fixed;
+    border: 3px solid gold;
+    animation-name: backColor;
+    animation-duration: 4s;
+}
+@keyframes backColor {
     0%   { color: black;}
     100% { color: gold;}
 }
 @keyframes backColorReverse{
     0%   {background-color: black; transform: translateY(-100%);}
     100% {background-color: gold; transform: translateY(0); }               
+}
+@keyframes backColorTransition{
+    0% { opacity: 0; }
+    100% { opacity: 100; }   
 }
 @keyframes marquee{
     0% {    transform: translateX(0);  }
