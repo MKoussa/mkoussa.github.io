@@ -1,22 +1,37 @@
 html, body{
-    height: 90%;
+    height: 100%;
+    width: 100%;
     font-family: Helvetica, sans-serif;
     background-color: black;
 }
-.header{
-    mix-blend-mode: difference; 
+.header-container {
+    mix-blend-mode: difference;
+    overflow: hidden;
+}
+.header-container-side {
+    mix-blend-mode: difference;
+    overflow: hidden;
+}
+.header-scroll {
+    mix-blend-mode: difference;
     color: gold;
     font-size: 400%;
     margin: 0;
     white-space: nowrap;
 }
-.grid-container{
+.grid-container {
+    display: grid;
     height: 100%;
-    display: flex;
-    flex-direction: row;
+    width: 100%;
+    gap: -10%;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-columns: 10% 10% 70% 10%;
 }
-.nav{
-    mix-blend-mode: difference; 
+
+.nav {
+    grid-column: 2;
+    grid-row: 2;
+    mix-blend-mode: difference;
     overflow: visible;
     color: black;
     background-color: gold;
@@ -46,13 +61,14 @@ html, body{
     color:gold;
     rotate: 0deg;
 }
-.mainBody{
-    mix-blend-mode: difference; 
+.mainBody {
+    grid-column: 3;
+    grid-row: 2;
+    mix-blend-mode: difference;
     text-align: center;
     background-color: black;
     color: gold;
-    position: relative;         
-    width: 100%;
+    position: relative;
     animation-name: backColor;
     animation-duration: 4s;
 }

@@ -3,6 +3,8 @@ dist/
 # generated types
 .astro/
 
+astro.config.mjs
+
 .vs/
 .vscode/
 
