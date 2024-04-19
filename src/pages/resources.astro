@@ -1,0 +1,36 @@
+---
+const pageTitle = "MKOUSSA |";
+import '../styles/global.css';
+import Header from '../components/header.astro';
+import Nav from '../components/nav.astro';
+import LeftScroll from '../components/leftScroll.astro';
+import RightScroll from '../components/rightScroll.astro';
+import Footer from '../components/footer.astro';
+---
+
+
+<html lang="en">
+    <head>
+        <title>{pageTitle} About</title>
+    </head>
+    </body>
+            <div class="grid-container">
+            <Header />
+                <LeftScroll />
+                <Nav />
+                <div class="mainBody">
+                    <h1>Resources</h1>
+                    <h2>Walk Throughs</h2>
+                    <a href="https://www.korg.com/us/products/dj/nts_1/custom_effects.php#article1">Korg DOTEC-AUDIO Articles</a><br>              
+                    <a href="https://korgnts1beginnersguide.wordpress.com/">Graham James Keane Setup Walk Through</a><br>
+                    <h2>Korg Tooling</h2>
+                    <a href="https://www.msys2.org/">MSYS - Software Distribution and Building Platform for Windows</a><br>
+                    <a href="https://korginc.github.io/logue-sdk/">Logue-SDK API Reference</a><br>
+                    <a href="https://github.com/korginc/logue-sdk">Logue-SDK Github Repo</a><br>
+                    <h2>Helpful Resources</h2>
+                    <a href="http://nic.vajn.icu/PDF/audio-gear/Korg/NTS-1/NTS-1_digital_Kit_OM_EFGSJ2.pdf">Korg NTS-1 Owners Manual</a><br>
+                </div>
+                <RightScroll />
+            <Footer />
+        </div>
+</html>

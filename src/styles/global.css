@@ -80,24 +80,34 @@ html, body {
     rotate: 0deg;
 }
 .mainBody {
+    width: clamp(40px, 70%, 500px);
     grid-column: 3;
     grid-row: 2;
     mix-blend-mode: difference;
     text-align: center;
-    height: auto;
     background-color: black;
     font-size: clamp(12px, 2vw, 18px);
     color: gold;
-    position: relative;
     animation-name: backColor;
     animation-duration: 4s;
+}
+a:link {
+    color: inherit;
+    text-decoration-line: none;
+}
+a:hover {
+    text-decoration-line: line-through;
+}
+a:visited {
+    color: inherit;
+    text-decoration-line: none;
 }
 .download-table {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     table-layout: fixed;
-    border: 3px solid gold;
+    border: 3px solid inherit;
     animation-name: backColor;
     animation-duration: 4s;
 }
