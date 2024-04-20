@@ -21,9 +21,12 @@ import Footer from '../components/footer.astro';
                     <p>Browser based synthesizers using the p5 Library.</p>
                     <div id='blorp'>
                     
-                    <iframe src="/blorpSynth/" height="100%" width="100%" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation"/>
 
                     </div>
+                    <canvas id="synth"></canvas>
+                    <script>
+                      import '../components/synth.ts'
+                    </script>
                 </div>
                 <RightScroll />
             <Footer />
