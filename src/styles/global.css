@@ -93,10 +93,10 @@ html, body {
 }
 a:link {
     color: inherit;
-    text-decoration-line: none;
+    text-decoration-line: underline;
 }
 a:hover {
-    text-decoration-line: line-through;
+    text-decoration-line: none;
 }
 a:visited {
     color: inherit;
