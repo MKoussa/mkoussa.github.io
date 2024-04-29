@@ -1,0 +1,53 @@
+---
+const pageTitle = "MKOUSSA |";
+import '../styles/global.css';
+import Header from '../components/header.astro';
+import Nav from '../components/nav.astro';
+import LeftScroll from '../components/leftScroll.astro';
+import RightScroll from '../components/rightScroll.astro';
+import Footer from '../components/footer.astro';
+---
+<html lang="en">
+    <head>
+        <title>{pageTitle} Reverse Echo</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    </head>
+    <body>
+        <div class="grid-container">
+            <Header />
+            <LeftScroll />
+            <Nav />
+            <div class="mainBody">
+                <h1>Korg NTS-1 Development</h1>
+                <h2>Reverse Echo</h2>
+                <p>Knob A sets the length (1 - 2 seconds) of the audio to reverse. Knob B sets trailing echo length. Shift B sets Wet/Dry Mix</p>
+                <a href="https://github.com/MKoussa/reverse-echo">Github Repo</a><br><br>
+                <table class="download-table">
+                    <caption>Download Pre-Built Reverse Echo Delay FX</caption>
+                    <tr>
+                        <th>Version</th>
+                        <th>Release Date</th>
+                        <th>Download</th>
+                    </tr>
+                    <tr>
+                        <td>1.0</td>
+                        <td>April 28th, 2024</td>
+                        <td><a href="/NTKDIGUNIT/ReverseEcho/V1/ntkdigunit" download>reverse-echo.ntkdigunit</a></td>
+                    </tr>
+                    <tr>
+                        <td>0.0</td>
+                        <td>April 22nd, 2024</td>
+                        <td><a href="/NTKDIGUNIT/ReverseEcho/V0/ntkdigunit" download>reverse-echo.ntkdigunit</a></td>
+                    </tr>
+                </table>
+                 </br>
+                 </br>
+            </div>
+            <RightScroll />
+            <Footer />
+        </div>
+    </body>
+</html>
