@@ -1,6 +1,7 @@
 ---
 const pageTitle = "MKOUSSA |";
 import '../styles/global.css';
+import Fonts from '../components/fonts.astro';
 import Header from '../components/header.astro';
 import Nav from '../components/nav.astro';
 import LeftScroll from '../components/leftScroll.astro';
@@ -9,6 +10,7 @@ import Footer from '../components/footer.astro';
 ---
 <html lang="en">
     <head>
+        <Fonts />
         <title>{pageTitle} Stutter</title>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -26,6 +28,15 @@ import Footer from '../components/footer.astro';
                 <p>This Mod FX samples up to 0.001953125 seconds of audio and repeats the sample up to 50 times. The sample time is set by the Time knob, and repeat amount is set by the Depth knob.</p>
 
                 <a href="https://github.com/MKoussa/stutter">Github Repo</a><br><br>
+
+                <form action="https://www.paypal.com/donate" method="post" target="_top">
+                    <input type="hidden" name="business" value="NA77856ZM84YE" />
+                    <input type="hidden" name="no_recurring" value="0" />
+                    <input type="hidden" name="item_name" value="Thank You for donating! I hope you enjoy Stutter!" />
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                </form>
+                <br>
                 <table class="download-table">
                     <caption>Download Pre-Built Stutter Mod FX</caption>
                     <tr>

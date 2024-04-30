@@ -1,15 +1,15 @@
 html, body {
     height: 99%;
     width: 99%;
-    font-family: Helvetica, sans-serif;
-    background-color: black;
+    font-family: Megrim, Astloch, Helvetica, sans-serif;
+    background-color: #F52549;
 }
 .header-container-top {
     mix-blend-mode: difference;
     overflow: hidden;
     animation-name: backColorTransitionTop;
     animation-duration: 8s;
-    height: clamp(10px, 7vw, 400px);
+    height: clamp(10px, 8vw, 400px);
     align-content: center;
 }
 .header-container-bottom {
@@ -17,7 +17,7 @@ html, body {
     overflow: hidden;
     animation-name: backColorTransitionBottom;
     animation-duration: 8s;
-    height: clamp(10px, 7vw, 400px);
+    height: clamp(10px, 8vw, 400px);
     align-content: center;
 }
 .header-container-side {
@@ -28,16 +28,14 @@ html, body {
     width: 7vw;
 }
 .header-scroll {
+    font-family: Nabla, Astloch, Helvetica, sans-serif;
     mix-blend-mode: difference;
-    color: gold;
     font-size: clamp(10px, 6vw, 400px);
     margin: 0;
     white-space: nowrap;
 }
 .grid-container {
     display: grid;
-    height: 100%;
-    width: 100%;
     gap: -10%;
     grid-auto-rows: auto;
     grid-template-rows: 10% 80% 10%;
@@ -45,52 +43,6 @@ html, body {
     align-content: start;
 }
 
-.nav {
-    align-content: center;
-    border-radius: 5px;
-    grid-column: 2;
-    grid-row: 2 / 4;
-    mix-blend-mode: difference;
-    color: black;
-    background-color: gold;
-    animation-name: backColorReverse;
-    animation-duration: 4s;
-}
-.navButton{
-    transition: 0.8s;
-    display: table;
-    width: 10vw;
-    overflow: scroll;
-    text-align: center;
-    font-size: clamp(10px, 2vw, 30px);
-    color:black;
-    rotate: -45deg;
-    text-decoration-line: none;
-}
-.navButton:link{
-    color:black;
-}
-.navButton:visited{
-    color:black;
-    text-decoration-line: none;
-}
-.navButton:hover{
-    background-color: black;
-    color: gold;
-    rotate: 0deg;
-}
-.mainBody {
-    width: clamp(40px, 70%, 500px);
-    grid-column: 3;
-    grid-row: 2;
-    mix-blend-mode: difference;
-    text-align: center;
-    background-color: black;
-    font-size: clamp(12px, 2vw, 18px);
-    color: gold;
-    animation-name: backColor;
-    animation-duration: 4s;
-}
 a:link {
     color: inherit;
     text-decoration-line: underline;
@@ -102,6 +54,59 @@ a:visited {
     color: inherit;
     text-decoration-line: none;
 }
+.nav {
+    align-content: center;
+    border-radius: 5px;
+    grid-column: 2;
+    grid-row: 2 / 3;
+    color: #F52549;
+    background-color: #FFBB00;
+    animation-name: backColorReverse;
+    animation-duration: 3s;
+}
+.navButton{
+    margin-top: 10%;
+    transition: 0.8s;
+    border-radius: 900px;
+    display: table;
+    width: 10vw;
+    overflow: scroll;
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(10px, 1.5vw, 30px);
+    color:#F52549;
+    rotate: -15deg;
+    text-decoration-line: none;
+}
+.navButton:link{
+    color:#F52549;
+    text-decoration-line: none;
+}
+.navButton:visited{
+    rotate: 15deg;
+    color:#F52549;
+    text-decoration-line: none;
+}
+.navButton:hover{
+    mix-blend-mode: difference;
+    background-color: #F52549;
+    color: #FFBB00;
+    rotate: 0deg;
+}
+.mainBody {
+    width: clamp(40px, 70%, 500px);
+    grid-column: 3;
+    grid-row: 2;
+    text-align: center;
+    margin-left: 5%;
+    background-color: #F52549;
+    font-size: clamp(14px, 2.5vw, 22px);
+    font-weight: bold;
+    color: #FFBB00;
+    animation-name: backColor;
+    animation-duration: 4s;
+}
+
 .download-table {
     margin-left: auto;
     margin-right: auto;
@@ -112,28 +117,28 @@ a:visited {
     animation-duration: 4s;
 }
 @keyframes backColor {
-    0%   { color: black;}
-    100% { color: gold;}
+    0%   { color: #F52549; transform: translateY(10%);}
+    100% { color: #FFBB00; transform: translateY(0); }
 }
 @keyframes backColorReverse{
-    0%   {background-color: black; transform: translateY(-100%);}
-    100% {background-color: gold; transform: translateY(0); }               
+    0%   {background-color: #F52549; transform: translateY(-10%);}
+    100% {background-color: #FFBB00; transform: translateY(0); }               
 }
 @keyframes backColorTransitionSide{
     0% { opacity: 0;
-        transform: translateX(200%); }
+        transform: translateX(50%); }
     100% { opacity: 100;
         transform: translateX(0); }   
 }
 @keyframes backColorTransitionTop{
     0% { opacity: 0;
-        transform: translateY(-200%); }
+        transform: translateY(-50%); }
     100% { opacity: 100; 
         transform: translatY(100%);}   
 }
 @keyframes backColorTransitionBottom{
     0% { opacity: 0;
-        transform: translateY(200%); }
+        transform: translateY(50%); }
     100% { opacity: 100; 
         transform: translatY(-100%);}   
 }

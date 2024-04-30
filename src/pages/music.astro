@@ -1,6 +1,7 @@
 ---
 const pageTitle = "MKOUSSA |";
 import '../styles/global.css';
+import Fonts from '../components/fonts.astro';
 import Header from '../components/header.astro';
 import Nav from '../components/nav.astro';
 import LeftScroll from '../components/leftScroll.astro';
@@ -9,6 +10,7 @@ import Footer from '../components/footer.astro';
 ---
 <html lang="en">
     <head>
+        <Fonts />
         <title>{pageTitle} Music</title>
     </head>
     <body>
@@ -24,6 +26,7 @@ import Footer from '../components/footer.astro';
                     <iframe style="border: 0; width: 30vw; height: 30vw;" src="https://bandcamp.com/EmbeddedPlayer/album=949237618/size=large/bgcol=333333/linkcol=e99708/tracklist=true/transparent=true/" seamless><a href="https://mkoussa.bandcamp.com/album/intro-birth">Intro//Birth by MKoussa</a></iframe>
                 </div>
                 <RightScroll />
+            <Footer />
         </div>
     </body>
 </html>
