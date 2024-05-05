@@ -11,19 +11,23 @@ import Footer from '../components/footer.astro';
 <html lang="en">
     <head>
         <Fonts />
-        <title>{pageTitle} Blog</title>
+        <title>{pageTitle} Oscillators</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
     </head>
     <body>
         <div class="grid-container">
             <Header />
-                <LeftScroll />
-                <Nav />
-                <div class="mainBody">
-                    <ul>
-                        <li><a href="/posts/post-1/">Post 1</a></li>
-                    </ul>
-                </div>
-                <RightScroll />
+            <LeftScroll />
+            <Nav />
+            <div class="mainBody">
+                <h1>Korg Logue Oscillators</h1>
+                <h2>Coming Soon...</h2>
+                <p>There's a lot of math I need to learn first, lol</p>
+            </div>
+            <RightScroll />
             <Footer />
         </div>
     </body>

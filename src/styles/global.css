@@ -1,11 +1,10 @@
 html, body {
     height: 99%;
     width: 99%;
-    font-family: Megrim, Astloch, Helvetica, sans-serif;
-    background-color: #F52549;
+    font-family: "Noto Sans", sans-serif;
+    background-color: #0f0d07;
 }
 .header-container-top {
-    mix-blend-mode: difference;
     overflow: hidden;
     animation-name: backColorTransitionTop;
     animation-duration: 8s;
@@ -13,7 +12,6 @@ html, body {
     align-content: center;
 }
 .header-container-bottom {
-    mix-blend-mode: difference;
     overflow: hidden;
     animation-name: backColorTransitionBottom;
     animation-duration: 8s;
@@ -21,7 +19,6 @@ html, body {
     align-content: center;
 }
 .header-container-side {
-    mix-blend-mode: difference;
     overflow: hidden;
     animation-name: backColorTransitionSide;
     animation-duration: 8s;
@@ -29,7 +26,6 @@ html, body {
 }
 .header-scroll {
     font-family: Nabla, Astloch, Helvetica, sans-serif;
-    mix-blend-mode: difference;
     font-size: clamp(10px, 6vw, 400px);
     margin: 0;
     white-space: nowrap;
@@ -55,11 +51,14 @@ a:visited {
     text-decoration-line: none;
 }
 .nav {
+    font-family: Megrim, Helvetica, sans-serif;
     align-content: center;
     border-radius: 5px;
     grid-column: 2;
     grid-row: 2 / 3;
-    color: #F52549;
+    width: clamp(60px, 10vw, 120px);
+    mix-blend-mode: difference;
+    color: inherit;
     background-color: #FFBB00;
     animation-name: backColorReverse;
     animation-duration: 3s;
@@ -67,40 +66,32 @@ a:visited {
 .navButton{
     margin-top: 10%;
     transition: 0.8s;
-    border-radius: 900px;
     display: table;
-    width: 10vw;
+    width: clamp(60px, 10vw, 120px);
     overflow: scroll;
     text-align: center;
     font-weight: bold;
-    font-size: clamp(10px, 1.5vw, 30px);
-    color:#F52549;
-    rotate: -15deg;
+    font-size: clamp(8px, 1.5vw, 18px);
+    color: inherit;
     text-decoration-line: none;
 }
 .navButton:link{
-    color:#F52549;
     text-decoration-line: none;
 }
 .navButton:visited{
-    rotate: 15deg;
-    color:#F52549;
     text-decoration-line: none;
 }
-.navButton:hover{
-    mix-blend-mode: difference;
-    background-color: #F52549;
-    color: #FFBB00;
-    rotate: 0deg;
+.navButton:hover {
+    letter-spacing: 0.5px;
 }
 .mainBody {
-    width: clamp(40px, 70%, 500px);
+    width: clamp(80px, 60vw, 700px);
     grid-column: 3;
     grid-row: 2;
     text-align: center;
     margin-left: 5%;
-    background-color: #F52549;
-    font-size: clamp(14px, 2.5vw, 22px);
+    background-color: inherit;
+    font-size: clamp(6px, 2.5vw, 16px);
     font-weight: bold;
     color: #FFBB00;
     animation-name: backColor;
@@ -117,36 +108,31 @@ a:visited {
     animation-duration: 4s;
 }
 @keyframes backColor {
-    0%   { color: #F52549; transform: translateY(10%);}
+    0%   { color: #0f0d07; transform: translateY(10%);}
     100% { color: #FFBB00; transform: translateY(0); }
 }
 @keyframes backColorReverse{
-    0%   {background-color: #F52549; transform: translateY(-10%);}
+    0%   {background-color: #0f0d07; transform: translateY(-10%);}
     100% {background-color: #FFBB00; transform: translateY(0); }               
 }
 @keyframes backColorTransitionSide{
-    0% { opacity: 0;
-        transform: translateX(50%); }
-    100% { opacity: 100;
-        transform: translateX(0); }   
+    0% { opacity: 0; transform: translateX(50%); }
+    100% { opacity: 100; transform: translateX(0); }   
 }
 @keyframes backColorTransitionTop{
-    0% { opacity: 0;
-        transform: translateY(-50%); }
-    100% { opacity: 100; 
-        transform: translatY(100%);}   
+    0% { opacity: 0; transform: translateY(-50%); }
+    100% { opacity: 100; transform: translatY(100%);}   
 }
 @keyframes backColorTransitionBottom{
-    0% { opacity: 0;
-        transform: translateY(50%); }
-    100% { opacity: 100; 
-        transform: translatY(-100%);}   
+    0% { opacity: 0; transform: translateY(50%); }
+    100% { opacity: 100; transform: translatY(-100%);}   
 }
 @keyframes marquee{
-    0% {    transform: translateX(0);  }
-    100% {     transform: translateX(-100%);  }
+    0% { transform: translateX(0);  }
+    0% { transform: translateX(0);  }
+    100% { transform: translateX(-100%);  }
 }
 @keyframes marqueeVert{
-    0% {    transform: translateY(100%);  }
-    100% {     transform: translateY(0);  }
+    0% { transform: translateY(100%);  }
+    100% { transform: translateY(0);  }
 }
