@@ -103,10 +103,16 @@ a:visited {
     margin-right: auto;
     text-align: center;
     table-layout: fixed;
-    border: 3px solid inherit;
+    border: 3px solid #FFBB00;
+    color: inherit;
     animation-name: backColor;
     animation-duration: 4s;
 }
+
+td {
+    border: 1px solid #FFBB00;
+}
+
 @keyframes backColor {
     0%   { color: #0f0d07; transform: translateY(10%);}
     100% { color: #FFBB00; transform: translateY(0); }
