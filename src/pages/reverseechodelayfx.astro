@@ -23,11 +23,27 @@ import Footer from '../components/footer.astro';
             <LeftScroll />
             <Nav />
             <div class="mainBody">
-                <h1>Korg NTS-1 Development</h1>
-                <h2>Reverse Echo</h2>
-                <p>Knob A sets the length (1 - 2 seconds) of the audio to reverse. <br>
-                    Knob B sets trailing echo length. <br>
-                    Shift B sets Wet/Dry Mix</p>
+                <h1>Korg NTS-1 Reverse Echo Delay FX</h1>
+                <table class="download-table">
+                    <caption>Controls</caption>
+                    <tr>
+                        <th>Knob</th>
+                        <th>Function</th>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>Sets the length (1 - 2 seconds) of the audio to reverse</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>Sets trailing echo length</td>
+                    </tr>
+                    <tr>
+                        <td>Shift-B</td>
+                        <td>Wet/Dry Mix</td>
+                    </tr>
+                </table>
+                <br>
                 <a href="https://github.com/MKoussa/reverse-echo">Github Repo</a><br><br>
 
                 <form action="https://www.paypal.com/donate" method="post" target="_top">
@@ -50,10 +66,16 @@ import Footer from '../components/footer.astro';
                         <th>Notes</th>
                     </tr>
                     <tr>
+                        <td>2.2</td>
+                        <td>May 22nd, 2024</td>
+                        <td><a href="/NTKDIGUNIT/ReverseEcho/V2/ntkdigunit" download>reverse-echo.ntkdigunit</a></td>
+                        <td>Implemented actual wet/dry mixing.<br>Shift-B %50 is now 50/50 wet/dry and %100 is fully wet.<br>Previously, shift-B %100 was 50/50 wet/dry.</td>
+                    </tr>
+                    <tr>
                         <td>2.0</td>
                         <td>May 12th, 2024</td>
                         <td><a href="/NTKDIGUNIT/ReverseEcho/V2/ntkdigunit" download>reverse-echo.ntkdigunit</a></td>
-                        <td>Fixed static when changing parameters. Moved to C++.</td>
+                        <td>Fixed static when changing parameters.<br>Moved to C++.</td>
                     </tr>
                     <tr>
                         <td>1.0</td>
